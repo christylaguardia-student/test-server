@@ -8,7 +8,7 @@ connect(dbUri);
 
 const PORT = process.env.PORT || 3000;
 
-// "http://10.0.12.192:3000/"
+// connect adatafruit to ip address "http://10.0.12.192:3000/"
 
 const SensorReading = require('./lib/sensorReadings');
 
@@ -21,7 +21,6 @@ app.get('/', bodyParser, (req, res) => {
 });
 
 app.post('/', bodyParser, (req, res) => {
-  // res.send('plantigotchi received post request', req.body);
   console.log('plantigotchi received post request', req.body);
 
   const moistureReading = new SensorReading(req.body);
@@ -29,8 +28,6 @@ app.post('/', bodyParser, (req, res) => {
 
   moistureReading.save()
     .then(saved => res.send(saved))
-    // .then(saved => res.send(200))
-    // .catch(next);
 
 });
 
