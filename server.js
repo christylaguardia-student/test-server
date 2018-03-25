@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser').json();
 
 const connect = require('./lib/databaseConnect');
-const dbUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/plantigotchi';
+const dbUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/plantigotchi'; //'mongodb://plant:igotchi@ds155080.mlab.com:55080/plantigotchi'
 connect(dbUri);
 
 const PORT = process.env.PORT || 3000;
